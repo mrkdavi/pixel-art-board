@@ -151,6 +151,13 @@ body {
   cursor: pointer;
 }
 
+#credit {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
 @media (max-width: 500px) {
   :root {
     --main-size: 35rem;
@@ -204,6 +211,106 @@ body {
   .color {
     height: 5.5rem;
     width: 5.5rem;
+  }
+
+  .btn {
+    width: 6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  #board-size {
+    width: 7rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-height: 800px) {
+  #main-content {
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+@media (max-height: 730px) {
+  :root {
+    --main-size: 25rem;
+  }
+
+  #color-palette {
+    height: 12rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .color {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .btn {
+    width: 6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  #board-size {
+    width: 7rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-height: 730px) {
+  :root {
+    --main-size: 25rem;
+  }
+
+  .pixel-paint {
+    width: 25rem;
+  }
+
+  #color-palette {
+    height: 12rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .color {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .btn {
+    width: 6rem;
+    padding: 0.6rem 1rem;
+  }
+
+  #board-size {
+    width: 7rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-height: 660px) {
+  :root {
+    --main-size: 22rem;
+  }
+
+  #title {
+    font-size: 3rem;
+  }
+
+  .pixel-paint {
+    width: 22rem;
+  }
+
+  #color-palette {
+    height: 10rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .color {
+    height: 4.5rem;
+    width: 4.5rem;
   }
 
   .btn {
