@@ -97,7 +97,7 @@ function clearboard() {
 }
 
 // Strart the paint flow
-function startFlow(e, onBoard) {
+function startFlow(e) {
   checkMousebutton(e, addEvents);
 }
 
@@ -110,11 +110,15 @@ function stopFlow(e) {
 // Check if the size value is able
 function checkSize(size) {
   if (size < 1) {
-    window.alert('Board inválido!');
+    window.alert('Invalid Value!');
     return false;
   }
+  if (size < 5) {
+    window.alert('5 is the minimum value!');
+    return 5;
+  }
   if (size >= 5 && size <= 50) return size;
-  if (size < 5) return 5;
+  window.alert('50 is the maximun value!');
   return 50;
 }
 
@@ -122,11 +126,12 @@ function checkSize(size) {
 function resize() {
   const checkedSize = checkSize(boardSize.value);
   if (checkedSize !== false) {
+    boardSize.value = checkedSize;
     deleteElements(pixelBoard, '.pixel');
     createElements(checkedSize * checkedSize, pixelBoard, 'div', 'pixel');
     addEvents('.pixel', 'mousedown', startFlow);
+    setStyleVariable('--grid-size', checkedSize);
   }
-  setStyleVariable('--grid-size', checkedSize);
 }
 
 // Check the mouse button event
