@@ -81,6 +81,12 @@ function paintPixel(e) {
   pixelElem.style.backgroundColor = selectedColor.style.backgroundColor;
 }
 
+function erasePixel(e) {
+  const pixelElem = e.target;
+  const selectedColor = document.querySelector('.selected');
+  pixelElem.style.backgroundColor = 'white';
+}
+
 function clearboard() {
   const pixels = document.querySelectorAll('.pixel');
 
@@ -90,15 +96,18 @@ function clearboard() {
   });
 }
 
-function startFlow(e) {
-  paintPixel(e);
-  addEvents('.pixel', 'mouseover', paintPixel);
+// Strart the paint flow
+function startFlow(e, onBoard) {
+  checkMousebutton(e, addEvents);
 }
 
-function endFlow() {
+// Stop the paint flow
+function stopFlow(e) {
   removeEvents('.pixel', 'mouseover', paintPixel);
+  removeEvents('.pixel', 'mouseover', erasePixel);
 }
 
+// Check if the size value is able
 function checkSize(size) {
   if (size < 1) {
     window.alert('Board inválido!');
@@ -109,15 +118,29 @@ function checkSize(size) {
   return 50;
 }
 
+// Change the board size
 function resize() {
   const checkedSize = checkSize(boardSize.value);
-  console.log(checkedSize);
   if (checkedSize !== false) {
     deleteElements(pixelBoard, '.pixel');
     createElements(checkedSize * checkedSize, pixelBoard, 'div', 'pixel');
     addEvents('.pixel', 'mousedown', startFlow);
   }
   setStyleVariable('--grid-size', checkedSize);
+}
+
+// Check the mouse button event
+function checkMousebutton(e, fun) {
+  switch (e.which) {
+    case 1:
+      paintPixel(e);
+      fun('.pixel', 'mouseover', paintPixel);
+      break;
+    case 3:
+      erasePixel(e);
+      fun('.pixel', 'mouseover', erasePixel);
+      break;
+  }
 }
 
 window.onload = () => {
@@ -127,7 +150,9 @@ window.onload = () => {
   addEvents('.color', 'click', switchColor);
 
   addEvents('.pixel', 'mousedown', startFlow);
-  addEvents('body', 'mouseup', endFlow);
+  addEvents('body', 'mouseup', stopFlow);
+
+  addEvents('#pixel-board', 'contextmenu', e => e.preventDefault());
 
   addEvents('#generate-board', 'click', resize);
 
