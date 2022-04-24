@@ -218,21 +218,25 @@ body {
 
   .input {
     font-size: 1.7rem;
-    height: 4rem;
-    width: 10rem;
+    height: 3.4rem;
+    width: 12rem;
   }
 
   .btn {
-    font-size: 1.7rem;
-    height: 4rem;
-    width: 10rem;
-    border-radius: 0.7rem;
+    font-size: 1.5rem;
+    height: 3.4rem;
+    width: 12rem;
+    border-radius: 0.4rem;
     padding: 0.6rem 1rem;
   }
 
   .color {
     height: 8.5rem;
     width: 8.5rem;
+  }
+  
+  #credit {
+    font-size: 1.5rem;
   }
 }
 
