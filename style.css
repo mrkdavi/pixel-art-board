@@ -24,6 +24,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #main-content {
@@ -158,6 +159,16 @@ body {
   font-style: italic;
 }
 
+/* MEDIA QUERIES */
+
+/* HEIGHT */
+
+@media (max-width: 768px) {
+  :root {
+    --main-size: 40rem;
+  }
+}
+
 @media (max-width: 500px) {
   :root {
     --main-size: 35rem;
@@ -224,43 +235,15 @@ body {
   }
 }
 
-@media (max-height: 800px) {
+/* HEIGHT */
+
+@media (max-height: 720px) {
+  :root {
+    --main-size: 25rem;
+  }
+
   #main-content {
-    height: 100vh;
-    border-radius: 0;
-  }
-}
-
-@media (max-height: 730px) {
-  :root {
-    --main-size: 25rem;
-  }
-
-  #color-palette {
-    height: 12rem;
-    flex-wrap: wrap;
-    align-content: space-between;
-  }
-
-  .color {
-    height: 5.5rem;
-    width: 5.5rem;
-  }
-
-  .btn {
-    width: 6rem;
-    padding: 0.6rem 1rem;
-  }
-
-  #board-size {
-    width: 7rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-@media (max-height: 730px) {
-  :root {
-    --main-size: 25rem;
+    padding: 3rem;
   }
 
   .pixel-paint {
@@ -291,7 +274,11 @@ body {
 
 @media (max-height: 660px) {
   :root {
-    --main-size: 22rem;
+    --main-size: 25rem;
+  }
+
+  #main-content {
+    background-color: transparent;
   }
 
   #title {
@@ -299,18 +286,18 @@ body {
   }
 
   .pixel-paint {
-    width: 22rem;
+    width: 25rem;
   }
 
   #color-palette {
-    height: 10rem;
+    height: 12rem;
     flex-wrap: wrap;
     align-content: space-between;
   }
 
   .color {
-    height: 4.5rem;
-    width: 4.5rem;
+    height: 5.5rem;
+    width: 5.5rem;
   }
 
   .btn {
@@ -321,5 +308,18 @@ body {
   #board-size {
     width: 7rem;
     padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-height: 525px) {
+  #color-palette {
+    height: 3rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .color {
+    height: 3rem;
+    width: 3rem;
   }
 }
