@@ -161,11 +161,78 @@ body {
 
 /* MEDIA QUERIES */
 
-/* HEIGHT */
+/* WIDTH */
 
 @media (max-width: 768px) {
   :root {
+    --main-size: 50rem;
+  }
+
+  #color-palette {
+    height: 24rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .color {
+    height: 11rem;
+    width: 11rem;
+  }
+
+  .input {
+    font-size: 2.3rem;
+    height: 6rem;
+    width: 13rem;
+  }
+
+  .btn {
+    font-size: 2.3rem;
+    height: 6rem;
+    width: 13rem;
+    border-radius: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  #credit {
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 660px) {
+  #main-content {
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
     --main-size: 40rem;
+  }
+
+  #color-palette {
+    height: 19rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+  .input {
+    font-size: 1.7rem;
+    height: 4rem;
+    width: 10rem;
+  }
+
+  .btn {
+    font-size: 1.7rem;
+    height: 4rem;
+    width: 10rem;
+    border-radius: 0.7rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .color {
+    height: 8.5rem;
+    width: 8.5rem;
   }
 }
 
@@ -188,23 +255,6 @@ body {
   #board-size {
     width: 12rem;
     padding: 0.6rem 1rem;
-  }
-}
-
-@media (max-width: 375px) {
-  :root {
-    --main-size: 30rem;
-  }
-
-  #color-palette {
-    height: 14rem;
-    flex-wrap: wrap;
-    align-content: space-between;
-  }
-
-  .color {
-    height: 6.5rem;
-    width: 6.5rem;
   }
 }
 
