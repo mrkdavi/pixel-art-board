@@ -8,3 +8,4 @@ Esse foi o meu 3º projeto feito na Trybe, basicamente é um quadro (grid) com v
 - Cores são geradas automaticamente
 - Um botão que ao ser clicado limpa o quadro
 - Função de segurar o botão esquerdo do mouse e pintar vários quadros continuamente
+- Apagar com o botão direito do mouse
